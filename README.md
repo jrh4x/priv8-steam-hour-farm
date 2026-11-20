@@ -65,9 +65,9 @@ Some Steam sessions can experience dropped tracking or socket timeouts after sev
 4. When the timer expires, PRIV8 will smoothly stop the idle processes and relaunch them within seconds, refreshing your Steam session seamlessly.
 
 ### 4. Starting the Farm
-- Click **Start** (`Iniciar`). PRIV8 will initialize each AppID sequentially with a short safety delay to avoid rate-limiting.
+- Click **Start**. PRIV8 will initialize each AppID sequentially with a short safety delay to avoid rate-limiting.
 - The list at the bottom will display the live running state, AppID, and elapsed farming time.
-- Click **Stop All** (`Parar Todos`) at any time to safely terminate all background processes.
+- Click **Stop All** at any time to safely terminate all background processes.
 
 ## Access & Authentication
 
