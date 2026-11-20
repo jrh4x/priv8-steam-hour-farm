@@ -59,7 +59,7 @@ In the **Game AppIDs** text box:
 ### 3. Configuring Periodic Auto-Restart
 Some Steam sessions can experience dropped tracking or socket timeouts after several consecutive hours. PRIV8 includes an automated periodic restart system to prevent this:
 
-1. Check the box **"Restart games every"** (`Reiniciar jogos a cada`).
+1. Check the box **"Restart games every"**.
 2. Set your desired interval in hours using the numeric selector (e.g., `1` for every 1 hour, `2` for every 2 hours).
 3. The dashboard will display a live countdown showing the time remaining until the next automatic restart (`Next restart`).
 4. When the timer expires, PRIV8 will smoothly stop the idle processes and relaunch them within seconds, refreshing your Steam session seamlessly.
