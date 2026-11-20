@@ -1,59 +1,24 @@
 <p align="center">
-  <img src="banner.png" width="100%" alt="Portal">
+  <img src="banner.png" width="100%" alt="PRIV8 — Steam Hour Farm">
 </p>
 
-<h1 align="center">PRIV8 — Portal</h1>
+<h1 align="center">PRIV8 — Steam Hour Farm</h1>
 
 <p align="center">
-  <strong>Advanced Gameplay Customization & Experiment Control</strong>
+  <strong>Simultaneous Background Steam Playtime & Hour Farming Tool</strong>
 </p>
 
-PRIV8 is a dedicated tool for Portal (Source Engine / Valve), featuring a hardware-accelerated DirectX 11 Dear ImGui control panel and an integrated native x86 module providing flight, physics manipulation, visual diagnostics, entity ESP, and object spawning.
+PRIV8 Steam Hour Farm is a lightweight, dedicated application designed to farm playtime hours and card drops on Steam across multiple games simultaneously. It runs headlessly in the background without needing to download, install, or launch the actual game clients, consuming virtually zero CPU and GPU resources.
 
 ## Features
 
-- **Movement & Physics**
-  - **Flight + Noclip**: Move freely in any direction through chamber walls, doors, and glass barriers.
-  - **Player Speed**: Real-time locomotion and noclip speed multiplier (0.25x to 5.0x).
-  - **Gravity Manipulation**: Fine-tune world gravity (0 to 1600 u/s²) with one-click presets: **Moon** (150 u/s²), **Normal** (600 u/s²), and **Heavy** (1200 u/s²).
-  - **Position Save & Teleport**: Save your coordinates anywhere in the current test chamber and instantly teleport back.
-
-- **Player Protection & Simulation**
-  - **Invulnerability (God Mode)**: Complete immunity to fall damage, energy balls, toxic goo, and environmental hazards.
-  - **NPC Invisibility (Notarget)**: Sentry turrets and security cameras ignore the player completely.
-  - **Time Scale Controller**: Adjust simulation speed from slow-motion (0.10x) up to accelerated (3.0x).
-
-- **Laboratory & Object Spawner**
-  - **Spawn Test Cube**: Spawns a physical Weighted Storage Cube directly in front of the player.
-  - **Spawn Metal Sphere**: Spawns a physical metal test sphere.
-  - Clean object tracking and reset manager.
-
-- **Visual & Map Inspection**
-  - **Full Brightness** (`mat_fullbright`): Disables dark shadows and reveals entire test chambers clearly.
-  - **Wireframe Mode** (`mat_wireframe`): Renders level geometry and brush wireframes in real time.
-  - **Coordinate Overlay** (`cl_showpos`): Displays live player position and velocity vectors.
-
-- **DirectX Viewport ESP Overlay**
-  - Layered viewport-projected ESP overlay synchronized with game frames.
-  - **ESP Snaplines**: Tracing lines from screen bottom to tracked entities.
-  - **ESP Names & Labels**: Shows object classifications and model names.
-  - **Filterable Entity Categories**:
-    - **Portals**: Blue and Orange active portals.
-    - **Cubes & Spheres**: Weighted storage cubes, companion cubes, and spheres.
-    - **Doors & Platforms**: Chamber doors and moving linear platforms.
-    - **Actors**: Player, Sentry Turrets, and NPCs.
-    - **Interactive Objects**: Buttons, pedestals, and puzzle elements.
-
-- **Diagnostics & Native Console**
-  - Real-time display of player HP, active spawned entities, and exact X, Y, Z coordinates.
-  - **Restore Controls**: Safely restores all modified engine ConVars and player properties to original values.
-  - **Safe DLL Unload**: Cleanly detaches hooks and unloads without restarting the game.
-
-- **Default Hotkeys**
-  - `Insert` — Show / hide control panel
-  - `Ctrl + Alt + N` — Toggle Flight / Noclip
-  - `Ctrl + Alt + G` — Toggle Invulnerability (God Mode)
-  - `Ctrl + Alt + T` — Toggle Time Scale (Slow Motion)
+- **Multi-Game Simultaneous Idling**: Farm playtime hours for several games at the exact same time on a single Steam account.
+- **Zero Resource Footprint**: Does not render 3D graphics or launch game windows; operates completely in the background via lightweight native Steamworks processes.
+- **No Game Installation Required**: Works as long as the games are in your Steam library — you never need to download gigabytes of game files.
+- **Automated Periodic Restart**: Built-in scheduler that automatically terminates and relaunches idle processes at custom intervals (e.g., every 1 hour, 2 hours, etc.) to keep Steam sessions fresh and prevent dropped tracking.
+- **Real-Time Elapsed Time Tracking**: Live monitoring dashboard displaying individual timers (Hours:Minutes:Seconds), active Process IDs (PIDs), and running status for every game.
+- **Automatic Persistence**: Automatically saves your configured AppID list and restart settings between sessions.
+- **Safe & Clean Shutdown**: Single-click button to stop and gracefully terminate all active idle processes.
 
 ## Screenshots
 
@@ -61,13 +26,48 @@ PRIV8 is a dedicated tool for Portal (Source Engine / Valve), featuring a hardwa
 
 ![PRIV8 Loader](loader.png)
 
-### In-Game Control Panel
+### Control Panel
 
 ![PRIV8 Control Panel](panel.png)
 
-### In-Game ESP & Gameplay
+### Active Farming Session
 
-![PRIV8 Gameplay](game.png)
+![PRIV8 Farming](farming.png)
+
+## How to Use
+
+### 1. Requirements
+- Ensure the official **Steam Client** is installed, running, and logged into your account.
+- Launch `Priv8 - Steam Hour Farm.exe` and authenticate using your access key.
+
+### 2. Adding Game AppIDs
+Each game on Steam has a unique numeric identifier called an **AppID** (you can find it in the game's store URL, e.g., `store.steampowered.com/app/730/` has AppID `730`).
+
+In the **Game AppIDs** text box:
+- Enter your game AppIDs.
+- You can format them by putting **one AppID per line** (press Enter / line break) or by separating them with commas or spaces.
+
+**Example (One per line):**
+```text
+730
+440
+570
+105600
+252490
+```
+
+### 3. Configuring Periodic Auto-Restart
+Some Steam sessions can experience dropped tracking or socket timeouts after several consecutive hours. PRIV8 includes an automated periodic restart system to prevent this:
+
+1. Check the box **"Restart games every"** (`Reiniciar jogos a cada`).
+2. Set your desired interval in hours using the numeric selector (e.g., `1` for every 1 hour, `2` for every 2 hours).
+3. The dashboard will display a live countdown showing the time remaining until the next automatic restart (`Next restart`).
+4. When the timer expires, PRIV8 will smoothly stop the idle processes and relaunch them within seconds, refreshing your Steam session seamlessly.
+
+### 4. Starting the Farm
+- Click **Start** (`Iniciar`). PRIV8 will initialize each AppID sequentially with a short safety delay to avoid rate-limiting.
+- The list at the bottom will display the live running state, AppID, and elapsed farming time.
+- Click **Stop All** (`Parar Todos`) at any time to safely terminate all background processes.
 
 ## Access & Authentication
 
@@ -79,7 +79,8 @@ Free access keys are available at:
 
 ## Compatibility
 
-Designed for **Portal** (build 1745010, Steam x86).
+- Works with all Steam accounts on Windows (x86 / x64).
+- Compatible with Steam Client (Steamworks API).
 
 ## Developer
 
@@ -88,11 +89,11 @@ Designed for **Portal** (build 1745010, Steam x86).
 ## Download
 
 <p align="center">
-  <a href="https://github.com/jrh4x/priv8-portal-loader/raw/refs/heads/main/Priv8%20-%20Portal.exe">
+  <a href="https://github.com/jrh4x/priv8-steam-hour-farm/raw/refs/heads/main/Priv8%20-%20Steam%20Hour%20Farm.exe">
     <strong>DOWNLOAD PRIV8</strong>
   </a>
 </p>
 
 ---
 
-*PRIV8 is an independent community project. It is not affiliated with, endorsed by, or sponsored by Valve Corporation.*
+*PRIV8 is an independent community project. It is not affiliated with, endorsed by, or sponsored by Valve Corporation or Steam.*
